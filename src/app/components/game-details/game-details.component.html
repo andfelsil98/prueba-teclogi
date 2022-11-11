@@ -1,0 +1,33 @@
+<div class="content-container">
+  <div class="img-container">
+    <img [src]="game?.info?.thumb" alt="">
+  </div>
+  <div class="info-container font">
+    <h1>{{ game?.info?.title }}</h1>
+    <h3 *ngIf="game?.info?.steamAppID">SteamID: {{ game?.info?.steamAppID }}</h3>
+    <h4>{{ game?.cheapestPriceEver?.date | date}}</h4>
+    <h2>¡BEST PRICE EVER!: {{ game?.cheapestPriceEver?.price | currency}}</h2>
+    <!-- <button type="button" routerLink="/home" (click)="goHome()">Volver</button> -->
+  </div>
+</div>
+<div class="deals-container font">
+  <h1>DEALS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>storeID</th>
+        <th>dealID</th>
+        <th>price</th>
+        <th>retailPrice</th>
+        <th>savings</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let deal of deals">
+      <td data-label="storeID">{{ deal.storeID }}</td>
+      <td data-label="dealID">{{ deal.dealID }}</td>
+      <td data-label="price">{{ deal.price | currency }}</td>
+      <td data-label="retailPrice">{{ deal.retailPrice }}</td>
+      <td data-label="savings">{{ deal.savings }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,14 @@
+<!--
+  <li *ngFor="let game of games">{{ game.external }}
+  <img [src]="game.thumb" alt=""></li>
+<app-game></app-game> -->
+<div *ngIf="games.length > 0" class="grid-container">
+  <app-game [game] = "game" *ngFor="let game of games"></app-game>
+</div>
+<div class="n_results font" *ngIf="noResults && games.length === 0">
+  <h1>{{ noResults }}</h1>
+</div>
+
+<div class="n_results font" *ngIf="welcome && games.length === 0">
+  <h1>{{ welcome }}</h1>
+</div>

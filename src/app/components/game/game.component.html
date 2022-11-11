@@ -1,0 +1,14 @@
+<div *ngIf="game" class="grid-item">
+  <a [routerLink]="['/details', game.gameID] ">
+    <img [src]="game.thumb" alt="">
+  </a>
+  <div>
+    <h3 class="font">{{ game.external }}</h3>
+  </div>
+  <div>
+    <button class="details font" type="button" [routerLink]="['/details', game.gameID] ">Ver detalles</button>
+  </div>
+</div>
+
+
+

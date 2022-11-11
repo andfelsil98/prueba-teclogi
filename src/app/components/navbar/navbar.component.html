@@ -1,0 +1,33 @@
+<div class="nav">
+  <!-- <div class="cointainer_pacman">
+
+  </div> -->
+
+  <div class="container_search_bar">
+    <div class="pacman">
+      <img src="./assets/icons/pacman-logo.png" alt="">
+    </div>
+    <div *ngIf="!detail" class="search_bar">
+      <span><i class="fa-solid fa-magnifying-glass" (click)="readGames()"></i></span><input (keydown.enter)="readGames()" [formControl]="search" type="text" placeholder="¿Qué estás buscando?">
+    </div>
+    <div *ngIf="detail" class="home">
+      <a routerLink="/home" (click)="removeDetail()"><span class="font">Volver</span><i class="fa-sharp fa-solid fa-house"></i></a>
+    </div>
+    <!-- <div class="resume font">
+      <p>Resumen de compras</p>
+    </div> -->
+    <div class="cart">
+      <p class="resume font">Resumen de compras</p>
+      <a href="">
+        <img src="./assets/icons/cart.png" alt="logo">
+      </a>
+      <span class="counter">0</span>
+    </div>
+
+    <div class="login">
+      <img src="./assets/icons/user.png" alt="">
+      <p class="font">Andres</p><span><i class="fa-solid fa-caret-down"></i></span>
+    </div>
+  </div>
+</div>
+
